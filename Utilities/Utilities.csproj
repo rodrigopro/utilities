@@ -6,12 +6,13 @@
     <Nullable>enable</Nullable>
 
     <PackageId>Rodrigo.PRO.Utilities</PackageId>
-    <Version>1.0.1</Version>
+    <Version>1.0.2-preview-20240306-01</Version>
     <Title>Rodrigo.PRO Utilities</Title>
     <Authors>Rodrigo Alves</Authors>
     <Company>Rodrigo PRO</Company>
     <ProjectUrl>https://github.com/rodrigopro/utilities</ProjectUrl>
-    <Description>A simple package to handle configurations, encryption and extensions.</Description>
+    <PackageProjectUrl>https://github.com/rodrigopro/utilities</PackageProjectUrl>
+    <Description>A simple package to handle configuration, encryption and extension.</Description>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 

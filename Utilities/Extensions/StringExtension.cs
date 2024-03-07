@@ -1,10 +1,27 @@
 using System.Globalization;
+using System.Net.Mail;
 using System.Text.RegularExpressions;
 
 namespace Utilities.Extensions;
 
 static partial class StringExtension
 {
+    static bool IsEmail(this string value)
+    {
+        try
+        {
+            _ = new MailAddress(value);
+        }
+        catch
+        {
+            return false;
+        }
+
+        return true;
+    }
+
+    static string FormatEmail(this string value) => value.ToLower().Replace(" ", "");
+
     static string RemoveDoubleSpacing(this string value)
     {
         var components = value.Split(' ', StringSplitOptions.RemoveEmptyEntries);
