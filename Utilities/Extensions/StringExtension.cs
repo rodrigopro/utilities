@@ -4,9 +4,9 @@ using System.Text.RegularExpressions;
 
 namespace Utilities.Extensions;
 
-static partial class StringExtension
+public static partial class StringExtension
 {
-    static bool IsEmail(this string value)
+    public static bool IsEmail(this string value)
     {
         try
         {
@@ -20,29 +20,29 @@ static partial class StringExtension
         return true;
     }
 
-    static string FormatEmail(this string value) => value.ToLower().Replace(" ", "");
+    public static string FormatEmail(this string value) => value.ToLower().Replace(" ", "");
 
-    static string RemoveDoubleSpacing(this string value)
+    public static string RemoveDoubleSpacing(this string value)
     {
         var components = value.Split(' ', StringSplitOptions.RemoveEmptyEntries);
 
         return string.Join(' ', components);
     }
 
-    static string ToSlug(this string value)
+    public static string ToSlug(this string value)
     {
         var components = LettersAndDigitsOnlyRegex().Replace(value, " ").Split(' ', StringSplitOptions.RemoveEmptyEntries);
 
         return string.Join('-', components).ToLower();
     }
 
-    static string DigitsOnlyRegex(this string value) => DigitsOnlyRegex().Replace(value, " ");
+    public static string DigitsOnly(this string value) => DigitsOnlyRegex().Replace(value, " ");
 
-    static string LettersOnly(this string value) => LettersOnlyRegex().Replace(value, " ");
+    public static string LettersOnly(this string value) => LettersOnlyRegex().Replace(value, " ");
 
-    static string LettersAndDigitsOnly(this string value) => LettersAndDigitsOnlyRegex().Replace(value, " ");
+    public static string LettersAndDigitsOnly(this string value) => LettersAndDigitsOnlyRegex().Replace(value, " ");
 
-    static string ToFullName(this string value, FullNameFormat fullNameFormat = FullNameFormat.AsItComes)
+    public static string ToFullName(this string value, FullNameFormat fullNameFormat = FullNameFormat.AsItComes)
     {
         value = value.RemoveDoubleSpacing();
 
